@@ -51,15 +51,7 @@ function Loginpage({logedin,setloged}) {
         console.log("error code - " + err.statusCode);
       });
   }
-//   function isLogin() {
-//     Backendless.UserService.isValidLogin()
-//       .then((res) => console.log(res))
-//       .catch((error) => console.log(error));
-      
-//   }
-  
-    
-  }
+
   return (
     <div>
       <div className="hero min-h-screen bg-base-200">
