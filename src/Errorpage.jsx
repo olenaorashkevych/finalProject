@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom'
 
 function Errorpage() {
   return (
-    <div>Email or password is wrong</div>
+    <div>you are not loged in. Email or password is wrong</div>
   )
 }
 
