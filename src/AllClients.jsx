@@ -21,13 +21,10 @@ if (!logedin) {
 
   return (
     <div>
-        
-    
+           
 <button type="click" onClick={logout}> Log out</button>
 
-
-
-    </div>
+</div>
   )
 }
 
