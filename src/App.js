@@ -11,7 +11,7 @@ import Errorpage from './Errorpage';
 
 
 function App() {
-  const [logedin, setloged] = useState(false);
+  const [logedin, setloged] = useState(true);
   
   Backendless.serverURL = "https://eu-api.backendless.com"
   Backendless.initApp( process.env.REACT_APP_ID, process.env.REACT_APP_JS_API_KEY );
