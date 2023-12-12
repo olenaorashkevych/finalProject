@@ -1,11 +1,11 @@
 import React from 'react'
-import { Route, Routes } from 'react-router-dom';
+import { Link, Route, Routes } from 'react-router-dom';
 
 function Addorseedatabase() {
   return (
     <div>
-    <button className="btn btn-primary">All clients</button>
-    <button className="btn btn-primary">Create a new client</button>
+    <Link to="/allclients" className="btn btn-primary" >See all clients</Link>
+    <Link to="/newclient"className="btn btn-primary">Create a new client</Link>
 
 
 
