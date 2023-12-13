@@ -3,7 +3,7 @@ import Backendless from "backendless";
 import { Route, Routes, useNavigate } from "react-router-dom";
 
 function Loginpage({logedin,setloged}) {
-//   const [logedin, setloged] = useState(false);
+  
   const [email, setEmail] = useState("");
   const [password, setpassword] = useState("");
   const navigate = useNavigate();
