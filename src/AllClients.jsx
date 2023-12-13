@@ -39,12 +39,52 @@ else {
 )
 
   return (
-    <div>
+    
+
+<div className='overflow-x-auto'>
+<table className="table table-xs ">
+<thead>
+   <tr>
+            <th>Client Name</th>
+            <th>Client Email</th>
+            <th>Source of Information</th>
+            <th>Client Category</th>
+            <th>Client Phone Number</th>
+            <th>Basic Discount</th>
+            <th>Date of Creation</th>
+    </tr>
+    </thead>   
+
+       
+   
+    
+    <tbody>
     {Clients && Clients.map
     (Client=>{
-      return(<div>
-        <table>
-        <tr>
+      return(
+     
+       
+            <tr>
+        <td>{Client.ClientName}</td> 
+
+        <td>{Client.Email}</td>    
+        <td>{Client.Source}</td>    
+        <td>{Client.Category}</td>    
+        <td>{Client.Phone_number}</td>    
+        <td>{Client.Discount}</td>    
+        <td>{Client.created}</td>  
+          </tr>
+
+        )
+        
+      }
+      
+      )}
+      </tbody>
+    
+    
+    <tfoot>
+    <tr>
             <th>Client Name</th>
             <th>Client Email</th>
             <th>Source of Information</th>
@@ -54,33 +94,12 @@ else {
             <th>Date of Creation</th>
 
         </tr>
-        <tr>
-        <td>{Client.ClientName}</td>
-        <td>{Client.Email}</td>
-        <td>{Client.Source}</td>
-        <td>{Client.Category}</td>
-        <td>{Client.Phone_number}</td>
-        <td>{Client.Discount}</td>
-        <td>{Client.created}</td>
-
-        
+    </tfoot>
+    </table>
 
 
-
-        </tr>
-        
-        </table>
-      
-      </div>
-      
-
-    )
-
-  }
-
-  )}
     
-    
+   
     </div>
   )
 }
