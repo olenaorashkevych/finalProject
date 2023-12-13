@@ -1,10 +1,15 @@
 .App {
-  text-align: center;
-}
-.twonavigationlinks
-{
   display: flex;
-  padding-top: 200px;
-  justify-content: space-around;
+  text-align: center;
   align-items: center;
+  justify-content: space-around;
 }
+
+.twonavigationlinks
+ {
+  width: 100vh;
+  height: 100vh;
+  display: flex;
+
+  align-items: center;
+  justify-content: space-around;}
