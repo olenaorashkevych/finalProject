@@ -47,7 +47,7 @@ function NewClient({ logedin, setloged }) {
             <form className="card-body" onSubmit={(e)=>savetheclient(e)}>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Client name</span>
+                  <span className="label-text" >Client name</span>
                 </label>
                 <input
                   onChange={(e) => setClientName(e.target.value)}
