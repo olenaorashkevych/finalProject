@@ -21,8 +21,7 @@ setClients(response);}
 
 ) 
 .catch( function( error )
- {
-}); 
+ {}); 
 }
  
 
@@ -97,7 +96,7 @@ else {
     </tfoot>
     </table>
 
-
+<button>Logout</button>
     
    
     </div>
