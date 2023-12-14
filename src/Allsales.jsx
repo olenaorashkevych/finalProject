@@ -32,13 +32,11 @@ function Allsales() {
 <table className="table table-xs ">
 <thead>
    <tr>
-            <th>Client Name</th>
-            <th>Client Email</th>
-            <th>Source of Information</th>
-            <th>Client Category</th>
-            <th>Client Phone Number</th>
-            <th>Basic Discount</th>
-            <th>Date of Creation</th>
+            <th>Number</th>
+            <th>Client</th>
+            <th>Sale date</th>
+            <th>Summ</th>
+            
     </tr>
 </thead>   
 <tbody>
@@ -54,13 +52,10 @@ function Allsales() {
     
     <tfoot>
     <tr>
-            <th>Client Name</th>
-            <th>Client Email</th>
-            <th>Source of Information</th>
-            <th>Client Category</th>
-            <th>Client Phone Number</th>
-            <th>Basic Discount</th>
-            <th>Date of Creation</th>
+    <th>Number</th>
+    <th>Client</th>
+    <th>Sale date</th>
+    <th>Summ</th>
 
         </tr>
     </tfoot>
