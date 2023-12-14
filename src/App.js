@@ -7,6 +7,8 @@ import AllClients from './AllClients';
 import Addorseedatabase from './Addorseedatabase';
 import Loginpage from './Loginpage';
 import Errorpage from './Errorpage';
+import Allsales from './Allsales';
+
 
 
 
@@ -21,6 +23,7 @@ function App() {
  
     <div className="App">
       <Routes>
+        <Route path='/allsales' element={<Allsales/> } />
         <Route path="/allclients" element={<AllClients logedin={logedin}setloged={setloged}/>}> </Route>
         <Route path="/newclient" element={<NewClient logedin={logedin} setloged={setloged}/>}> </Route>
         <Route path="/addorseeclients" element={<Addorseedatabase/>}></Route>
