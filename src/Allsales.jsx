@@ -65,7 +65,7 @@ function Allsales() {
         </tr>
     </tfoot>
     </table>
-
+<button>Log out</button>
 
     
    
