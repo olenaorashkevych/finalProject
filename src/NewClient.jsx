@@ -4,25 +4,34 @@ import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 
 function NewClient({ logedin, setloged }) {
-  const [Discount, setDiscount] = useState(0);
-  const [ClientName, setClientName] = useState(" ");
-  const [Email, setEmail] = useState(" ");
-  const [Category, setCategory] = useState(" ");
-  const [Phone_number, setPhone_number] = useState(" ");
-  const [Source, setsource] = useState(" ");
+  // const [Discount, setDiscount] = useState(0);
+  // const [ClientName, setClientName] = useState(" ");
+  // const [Email, setEmail] = useState(" ");
+  // const [Category, setCategory] = useState(" ");
+  // const [Phone_number, setPhone_number] = useState(" ");
+  // const [Source, setsource] = useState(" ");
 
   function savetheclient(e) {
     e.preventDefault();
+    const name = e.target.ClientName.value
+    const email = e.target.Email.value
+    const phone = e.target.Phone_number.value
+    const category = e.target.category.value
+    const source= e.target.source.value 
+    const discount= e.target.discount.value
+    e.target.Email.value = ""
     const savedClient = {
-        Discount: parseInt(Discount) ,
-      Category: Category,
-      ClientName: ClientName,
-      Email: Email,
-      Phone_number: Phone_number,
-      Source: Source,
+      // Discount: parseInt(Discount),
+      // Category: Category,
+      ClientName: name,
+      Email: email,
+      Phone_number: phone,
+      Source: source,
+      Category: category,
+      Discount: parseInt(discount)
     };
-    console.log(Discount);
-    console.log(typeof(Discount));
+    // console.log(Discount);
+    // console.log(typeof Discount);
     Backendless.Data.of("Allclients")
       .save(savedClient)
       .then((res) => {
@@ -30,6 +39,13 @@ function NewClient({ logedin, setloged }) {
       })
       .catch((e) => console.log(e));
   }
+
+  // function exampoleSubmit (e) {
+  //   e.preventDefault()
+    
+  //   console.log("for Olena:", name, amount);
+
+  // }
 
   return (
     <div>
@@ -44,13 +60,13 @@ function NewClient({ logedin, setloged }) {
             </div>
           </div>
           <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-            <form className="card-body" onSubmit={(e)=>savetheclient(e)}>
+            <form className="card-body" onSubmit={(e) => savetheclient(e)}>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text" >Client name</span>
+                  <span className="label-text">Client name</span>
                 </label>
-                <input
-                  onChange={(e) => setClientName(e.target.value)}
+                <input name="ClientName"
+                  // onChange={(e) => setClientName(e.target.value)}
                   type="text"
                   placeholder="put a name and last name"
                   className="input input-bordered"
@@ -63,15 +79,17 @@ function NewClient({ logedin, setloged }) {
                 </label>
 
                 <input
-                  onChange={(e) => setPhone_number(e.target.value)}
+                  // onChange={(e) => setPhone_number(e.target.value)}
+                  name="Phone_number"
                   type="text"
                   placeholder="clients phone number"
                   className="input input-bordered"
                   required
                 />
                 <input
-                  onChange={(e) => setEmail(e.target.value)}
-                  type=""
+                  // onChange={(e) => setEmail(e.target.value)}
+                  name="Email"
+                  type="email"
                   placeholder="clients email"
                   className="input input-bordered"
                   required
@@ -79,7 +97,8 @@ function NewClient({ logedin, setloged }) {
               </div>
               <div class="inline-block relative w-64">
                 <select
-                  onChange={(e) => setCategory(e.target.value)}
+                name="category"
+                  // onChange={(e) => setCategory(e.target.value)}
                   class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
                 >
                   <option>Choose client category</option>
@@ -89,8 +108,8 @@ function NewClient({ logedin, setloged }) {
                   <option>Manufacturer</option>
                   <option>Retail</option>
                 </select>
-                <select
-                  onChange={(e) => setsource(e.target.value)}
+                <select name="source"
+                  // onChange={(e) => setsource(e.target.value)}
                   class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
                 >
                   <option>Source of Information</option>
@@ -106,12 +125,12 @@ function NewClient({ logedin, setloged }) {
                   </label>
 
                   <input
-                    setSource
+                    name="discount"
                     type="text"
                     placeholder="10"
                     className="input input-bordered"
                     required
-                    onChange={(e)=>setDiscount(e.target.value)}
+                    // onChange={(e) => setDiscount(e.target.value)}
                   />
                 </div>
                 <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
@@ -125,14 +144,17 @@ function NewClient({ logedin, setloged }) {
                 </div>
               </div>
               <div className="form-control mt-6">
-                <button
-                  type="submit"
-                  className="btn btn-primary"
-                >
+                <button type="submit" className="btn btn-primary">
                   Create a new client
                 </button>
               </div>
             </form>
+            
+            {/* <form onSubmit={exampoleSubmit}>
+              <input type="text" name="name" id="" />
+              <input type="text" name="amount" id="" />
+              <button type="submit">Add</button> */}
+            {/* </form> */}
           </div>
         </div>
       </div>
