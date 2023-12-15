@@ -26,25 +26,25 @@ function Newsale({ logedin, setloged }) {
         };
         
        
-​
-
-​
-        Backendless.Data.of("Salesrecords")
+ Backendless.Data.of("Salesrecords")
           .save(savedSale)
           .then((res) => {
+    var connectedsale = res.objectId
+    var soldname=name
+    
+ Backendless.Data.of( "Salesrecords" ).addRelation( connectedsale, "Client", [soldname] )
+            .then( function( count ) {
+              console.log( "relation has been set" );
+            })
+            .catch( function( error ) {
+              console.log( "server reported an error - " + error.message );
+            })
             console.log(res);
           })
           .catch((e) => console.log(e));
     }
-    var connectedsale = res.objectID
-    var soldname=res.name
-    Backendless.Data.of( "Salesrecords" ).addRelation( connectedsale, "Client", [soldname] )
-    .then( function( count ) {
-      console.log( "relation has been set" );
-    })
-    .catch( function( error ) {
-      console.log( "server reported an error - " + error.message );
-    })
+    
+   
   return (
     <div>
       <div className="hero min-h-screen bg-base-200">
@@ -64,16 +64,10 @@ function Newsale({ logedin, setloged }) {
                   <span className="label-text">Client name</span>
                 </label>
                 <select name="ClientName">
-{clientslist && clientslist.map(itemlist=><option value={itemlist.ClientName}>  {itemlist.ClientName}</option>)}
+{clientslist && clientslist.map(itemlist=><option value={itemlist.objectId}>  {itemlist.ClientName}</option>)}
 
                 </select>
-                {/* <input name="ClientName"
-            
-                  type="text"
-                  placeholder="put a name and last name"
-                  className="input input-bordered"
-                  required
-                /> */}
+                
               </div>
               
               <div class="inline-block relative w-64">
