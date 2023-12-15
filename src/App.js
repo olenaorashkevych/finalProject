@@ -9,6 +9,7 @@ import Loginpage from './Loginpage';
 import Errorpage from './Errorpage';
 import Allsales from './Allsales';
 import Report from './Report';
+import Newsale from './Newsale';
 
 
 
@@ -46,7 +47,7 @@ function App() {
         <Route  path="/" element={<Loginpage logedin={logedin} setloged={setloged}/>}></Route>
         <Route  path="/errorpage" element={<Errorpage/>}></Route>
         <Route  path="/report" element={<Report allsales={allsales} setallsales={setallsales}logedin={logedin}setloged={setloged}/>}></Route>
-
+        <Route  path="/newsale" element={<Newsale allsales={allsales} setallsales={setallsales}logedin={logedin}setloged={setloged}/>}></Route>
       </Routes>
     </div>
   );

@@ -27,14 +27,11 @@ function Allsales({logedin,setloged}) {
     seeallsales()
     },[]
     )
-
-
     function categoryFilter () {
 
       setallsales(i => allsales.filter(sale => sale.Client.Category != "Designer"))
     }
     
-
   return (
 <div className='overflow-x-auto'>
   <button onClick={categoryFilter}>filter</button>
