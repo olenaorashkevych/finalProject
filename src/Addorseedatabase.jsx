@@ -9,6 +9,8 @@ function Addorseedatabase() {
     <Link to="/newsale"className="btn btn-primary linK">Create a new sale</Link>
     <Link to="/allsales"className="btn btn-primary linK">See sales records</Link>
     <Link to="/report"className="btn btn-primary linK">See the Report</Link>
+    <Link to="/calls"className="btn btn-primary linK">Schedule the calls</Link>
+
 
 
 
