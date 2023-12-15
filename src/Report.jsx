@@ -30,20 +30,21 @@ function Report({allsales, setallsales,logedin, setloged}) {
               <th>Client</th>
               <th>Sale date</th>
               <th>Summ</th>
+              <th>Source</th>
               
       </tr>
   </thead>   
   <tbody>
 
-    {categoryfilter? categoryfilter.map(sale => <p>{sale.Summ}</p>) : allsales && allsales.map 
-          (sale => (<div>
-        <p>{sale.number}</p>
-          <p>{sale.Client.ClientName}</p>
-          <p>{sale.saledate}</p>
-          <p>{sale.Summ}</p>
-          <p>{sale.Client.Source}</p>
+    {categoryfilter? categoryfilter.map(sale => <tr><td>{sale.number}</td><td>{sale.Client.ClientName}</td><td>{Date(sale.salesdate)}</td>{sale.Summ} <td>{sale.Client.Source}</td></tr>) : allsales && allsales.map 
+          (sale => (<tr>
+        <td>{sale.number}</td>
+          <td>{sale.Client.ClientName}</td>
+          <td>{Date(sale.salesdate)}</td>
+          <td>{sale.Summ}</td>
+          <td>{sale.Client.Source}</td>
 
-          </div>
+          </tr>
           
           
           
