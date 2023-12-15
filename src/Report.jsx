@@ -1,18 +1,21 @@
 
 import React from "react";
 import { useState } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import Backendless from "backendless";
-
-
 
 function Report({allsales, setallsales,logedin, setloged}) {
     const [categoryfilter,setcategoryfilter]=useState()
+    const navigate=useNavigate()
     function logout() {
         Backendless.UserService.logout()
-        .then((res) => console.log(res))
+        .then((res) => {
+        setloged(false)
+       navigate ("/errorpage")
+      }
+        )
         .catch((erro) => console.log(erro));
-        setloged(false);
+        
               }
     function categoryFilterdes () {
 
@@ -43,20 +46,9 @@ function Report({allsales, setallsales,logedin, setloged}) {
           <td>{(new Date(sale.salesdate)).getFullYear() }/{(new Date(sale.salesdate)).getMonth()}/{(new Date(sale.salesdate)).getDay()}</td>
           <td>{sale.Summ}</td>
           <td>{sale.Client.Source}</td>
-
-          </tr>
-          
-          
-          
-
-
-          )
-            
-        
-      
-        )}
+          </tr>))}
     
-      {}
+      {/* {} */}
   
   </tbody>
       
@@ -71,7 +63,9 @@ function Report({allsales, setallsales,logedin, setloged}) {
           </tr>
       </tfoot>
       </table>
+   
   <button  onClick={logout} className="btn btn-primary linK">Log out</button>
+  {/* <button onClick={filternotactive} className="btn btn-primary linK"> Remind me to call these clients</button> */}
   
       
      
