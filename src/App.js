@@ -1,23 +1,39 @@
 import Backendless from 'backendless';
 import './App.css';
 import {  Route, Routes} from 'react-router-dom';
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import NewClient from './NewClient';
 import AllClients from './AllClients';
 import Addorseedatabase from './Addorseedatabase';
 import Loginpage from './Loginpage';
 import Errorpage from './Errorpage';
 import Allsales from './Allsales';
-
+import Report from './Report';
 
 
 
 function App() {
   const [logedin, setloged] = useState(true);
+  const [allsales, setallsales] = useState();
   
   Backendless.serverURL = "https://eu-api.backendless.com"
   Backendless.initApp( process.env.REACT_APP_ID, process.env.REACT_APP_JS_API_KEY );
   
+
+  function seeallsales() {
+    Backendless.Data.of("Salesrecords")
+      .find({relations:["Client"]
+      })
+      .then((response) => {
+        console.log(response);
+        setallsales(response);
+      })
+      .catch(function (error) {});
+  }
+  useEffect(()=>{
+    seeallsales()
+    },[]
+    )
   return (
    
  
@@ -29,6 +45,7 @@ function App() {
         <Route path="/addorseeclients" element={<Addorseedatabase/>}></Route>
         <Route  path="/" element={<Loginpage logedin={logedin} setloged={setloged}/>}></Route>
         <Route  path="/errorpage" element={<Errorpage/>}></Route>
+        <Route  path="/report" element={<Report allsales={allsales} setallsales={setallsales}logedin={logedin}setloged={setloged}/>}></Route>
 
       </Routes>
     </div>
