@@ -36,11 +36,11 @@ function Report({allsales, setallsales,logedin, setloged}) {
   </thead>   
   <tbody>
 
-    {categoryfilter? categoryfilter.map(sale => <tr><td>{sale.number}</td><td>{sale.Client.ClientName}</td><td>{Date(sale.salesdate)}</td>{sale.Summ} <td>{sale.Client.Source}</td></tr>) : allsales && allsales.map 
+    {categoryfilter? categoryfilter.map(sale => <tr><td>{sale.number}</td><td>{sale.Client.ClientName}</td><td>  {(new Date(sale.salesdate)).getDay()}/{(new Date(sale.salesdate)).getMonth()}/{(new Date(sale.salesdate)).getFullYear()}</td>{sale.Summ} <td>{sale.Client.Source}</td></tr>) : allsales && allsales.map 
           (sale => (<tr>
         <td>{sale.number}</td>
           <td>{sale.Client.ClientName}</td>
-          <td>{Date(sale.salesdate)}</td>
+          <td>{(new Date(sale.salesdate)).getFullYear() }/{(new Date(sale.salesdate)).getMonth()}/{(new Date(sale.salesdate)).getDay()}</td>
           <td>{sale.Summ}</td>
           <td>{sale.Client.Source}</td>
 
