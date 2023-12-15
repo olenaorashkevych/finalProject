@@ -4,13 +4,7 @@ import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 
 function NewClient({ logedin, setloged }) {
-  // const [Discount, setDiscount] = useState(0);
-  // const [ClientName, setClientName] = useState(" ");
-  // const [Email, setEmail] = useState(" ");
-  // const [Category, setCategory] = useState(" ");
-  // const [Phone_number, setPhone_number] = useState(" ");
-  // const [Source, setsource] = useState(" ");
-
+ 
   function savetheclient(e) {
     e.preventDefault();
     const name = e.target.ClientName.value
