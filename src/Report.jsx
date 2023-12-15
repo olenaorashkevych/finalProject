@@ -16,13 +16,13 @@ function Report({allsales, setallsales,logedin, setloged}) {
               }
     function categoryFilterdes () {
 
-        setcategoryfilter(sale => allsales.filter(sale => sale.Client.Retail != "Designer"))
+        setcategoryfilter(sale => allsales.filter(sale => sale.Client.Category != "Retail"))
         
       }
       
   return (
     <div className='overflow-x-auto'>
-    <button onClick={categoryFilterdes}>filter</button>
+    <button onClick={categoryFilterdes}>All B2B Sales</button>
   <table className="table table-xs ">
   <thead>
      <tr>
@@ -34,14 +34,28 @@ function Report({allsales, setallsales,logedin, setloged}) {
       </tr>
   </thead>   
   <tbody>
-    
-      {allsales && allsales.map 
-          (sale => {return(<p>sale.Summ</p>
+
+    {categoryfilter? categoryfilter.map(sale => <p>{sale.Summ}</p>) : allsales && allsales.map 
+          (sale => (<div>
+        <p>{sale.number}</p>
+          <p>{sale.Client.ClientName}</p>
+          <p>{sale.saledate}</p>
+          <p>{sale.Summ}</p>
+          <p>{sale.Client.Source}</p>
+
+          </div>
+          
+          
+          
+
+
           )
             
-        }
+        
       
         )}
+    
+      {}
   
   </tbody>
       
