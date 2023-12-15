@@ -96,7 +96,7 @@ else {
     </tfoot>
     </table>
 
-<button>Logout</button>
+<button onClick={logout}className="btn btn-primary linK">Logout</button>
     
    
     </div>
