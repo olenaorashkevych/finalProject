@@ -9,13 +9,15 @@ const [Clients, setClients] = useState('')
 const navigate=useNavigate()
 
 function logout() {
-Backendless.UserService.logout()
-.then((res) => console.log(res))
-.catch((erro) => console.log(erro));
-setloged(false);
-      }
+ Backendless.UserService.logout()
+.then((res) => {
+  setloged(false)
+ navigate ("/")
+})
+.catch((erro) => console.log(erro));}
+
 function seeallclients() {
-Backendless.Data.of( "Allclients" ).find()
+ Backendless.Data.of( "Allclients" ).find()
 .then(  response => {console.log(response)
 setClients(response);}
 
