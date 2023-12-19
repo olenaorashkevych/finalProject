@@ -3,6 +3,7 @@
   text-align: center;
   align-items: center;
   justify-content: space-around;
+  margin-top: 50px;
 }
 
 .twonavigationlinks
@@ -13,3 +14,20 @@
 
   align-items: center;
   justify-content: space-around;}
+/* .flexiblecenter
+{
+  width: 100vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding: 50px}
+  .pushend
+  {
+    float: inline-end;
+  }
+  .pushstart
+  {
+    float: inline-start;
+  } */
