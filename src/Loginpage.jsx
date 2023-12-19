@@ -43,7 +43,7 @@ function Loginpage({logedin,setloged}) {
     var user = new Backendless.User();
     user.email = "olenaorashkevych@gmail.com";
     user.password = "munich2024";
-
+   
     Backendless.UserService.register(user)
       .then((res) => console.log("user has been registered"))
       .catch((err) => {
